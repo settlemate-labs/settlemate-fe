@@ -1,5 +1,4 @@
-import { Text, View } from 'react-native';
-import { createStyleSheet, useStyles } from 'react-native-unistyles';
+import { StyleSheet, Text, View } from 'react-native';
 
 type Props = {
   label: string;
@@ -7,8 +6,6 @@ type Props = {
 };
 
 export const MetricCard = ({ label, value }: Props) => {
-  const { styles } = useStyles(stylesheet);
-
   return (
     <View style={styles.card}>
       <Text style={styles.label}>{label}</Text>
@@ -17,8 +14,8 @@ export const MetricCard = ({ label, value }: Props) => {
   );
 };
 
-const stylesheet = createStyleSheet(() => ({
+const styles = StyleSheet.create({
   card: { flex: 1, borderRadius: 8, backgroundColor: '#ffffff', padding: 16 },
   label: { color: '#64748b', fontSize: 12 },
   value: { color: '#0f172a', fontSize: 24, fontWeight: '700' }
-}));
+});

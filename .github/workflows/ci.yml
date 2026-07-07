@@ -24,4 +24,5 @@ jobs:
           node-version: 22
       - run: npm run self-check
       - run: npm install
+      - run: npm test
       - run: npm run typecheck

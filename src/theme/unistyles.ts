@@ -2,7 +2,7 @@ import { StyleSheet } from 'react-native-unistyles';
 
 StyleSheet.configure({
   settings: {
-    initialTheme: 'light'
+    initialTheme: () => 'light'
   },
   themes: {
     light: {
