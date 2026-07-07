@@ -1,0 +1,23 @@
+{
+  "name": "settlemate-fe",
+  "version": "0.1.0",
+  "private": true,
+  "main": "expo-router/entry",
+  "scripts": {
+    "start": "expo start",
+    "self-check": "node scripts/self-check.mjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "expo": "^53.0.0",
+    "expo-router": "^5.0.0",
+    "ky": "^1.7.5",
+    "react": "^19.0.0",
+    "react-native": "^0.79.0",
+    "react-native-unistyles": "^3.0.0"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.8.0"
+  }
+}
