@@ -2,6 +2,7 @@ import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 
 const required = [
+  'app.json',
   'src/app/_layout.tsx',
   'src/app/index.tsx',
   'src/features/dashboard/api.ts',
@@ -18,7 +19,9 @@ for (const file of required) {
 }
 
 const pkg = JSON.parse(readFileSync('package.json', 'utf8'));
+const app = JSON.parse(readFileSync('app.json', 'utf8'));
 if (!pkg.dependencies?.ky) throw new Error('ky dependency missing');
+if (app.expo?.experiments?.reactCompiler !== true) throw new Error('react compiler experiment missing');
 if (!readFileSync('src/features/dashboard/api.ts', 'utf8').includes("from 'ky'")) {
   throw new Error('dashboard api must use ky');
 }
